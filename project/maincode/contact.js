@@ -4,9 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const answer = this.nextElementSibling;
-            answer.classList.toggle('show');
+            const isActive = this.classList.contains('active');
+            
+            // Close all other FAQs
+            faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('show');
+            });
+            
+            // Toggle current FAQ if it wasn't active
+            if (!isActive) {
+                this.classList.add('active');
+                this.nextElementSibling.classList.add('show');
+            }
         });
     });
     
@@ -18,13 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
             
             // Simple validation
-            if (!name || !email || !subject) {
+            if (!name || !email || !subject || !message) {
                 alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
                 return;
             }
             
