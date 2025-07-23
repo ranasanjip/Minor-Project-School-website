@@ -4,18 +4,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
-            const isActive = this.classList.contains('active');
+            // Toggle current FAQ
+            this.classList.toggle('active');
+            const answer = this.nextElementSibling;
             
-            // Close all other FAQs
-            faqQuestions.forEach(q => {
-                q.classList.remove('active');
-                q.nextElementSibling.classList.remove('show');
-            });
+            if (this.classList.contains('active')) {
+                answer.classList.add('show');
+            } else {
+                answer.classList.remove('show');
+            }
             
-            // Toggle current FAQ if it wasn't active
-            if (!isActive) {
-                this.classList.add('active');
-                this.nextElementSibling.classList.add('show');
+            // Close other FAQs if this one is being opened
+            if (this.classList.contains('active')) {
+                faqQuestions.forEach(q => {
+                    if (q !== this && q.classList.contains('active')) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('show');
+                    }
+                });
             }
         });
     });
@@ -30,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get form values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
             
@@ -46,21 +53,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // Phone validation (if provided)
+            if (phone && !/^[\d\s+-]+$/.test(phone)) {
+                alert('Please enter a valid phone number.');
+                return;
+            }
+            
+            // Create form data object
+            const formData = {
+                name,
+                email,
+                phone: phone || 'Not provided',
+                subject,
+                message,
+                timestamp: new Date().toISOString()
+            };
+            
             // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
-            alert(`Thank you, ${name}! Your message has been sent. We'll contact you at ${email} soon.`);
+            console.log('Form submission:', formData);
+            
+            // Show success message
+            alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon.`);
             
             // Reset the form
             contactForm.reset();
         });
     }
     
-    // Map interaction (placeholder functionality)
-    const mapIframe = document.querySelector('.map-container iframe');
-    if (mapIframe) {
-        mapIframe.addEventListener('load', function() {
-            // You could add additional map interaction logic here
-            console.log('Map loaded successfully');
+    // Initialize form validation on blur
+    const formInputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.required && !this.value.trim()) {
+                this.classList.add('error');
+            } else {
+                this.classList.remove('error');
+            }
+            
+            // Special validation for email
+            if (this.type === 'email' && this.value.trim()) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(this.value)) {
+                    this.classList.add('error');
+                } else {
+                    this.classList.remove('error');
+                }
+            }
         });
-    }
+    });
 });

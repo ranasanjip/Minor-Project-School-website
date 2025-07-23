@@ -103,6 +103,8 @@
 }
 
 .load-more button {
+    border-color: gray;
+    color: gray;
     padding: 10px 25px;
 }
 
@@ -224,4 +226,3 @@ body.dark-mode .lightbox-nav button {
 body.dark-mode .lightbox-nav button:hover {
     background-color: var(--accent-color);
 }
-

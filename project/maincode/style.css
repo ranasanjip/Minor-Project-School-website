@@ -144,195 +144,6 @@ ul {
     box-shadow: var(--box-shadow);
 }
 
-.btn-small {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-}
-
-/* Navbar Styles */
-.top-nav {
-    background-color: var(--white);
-    color: var(--black);
-    padding: 10px 0;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.top-nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.top-nav-links a {
-    color: var(--black);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: var(--transition);
-}
-
-.top-nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.top-nav-links i {
-    font-size: 0.8rem;
-}
-
-.top-nav-social {
-    display: flex;
-    gap: 15px;
-}
-
-.top-nav-social a {
-    color: var(--black);
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.top-nav-social a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-.main-nav {
-    background-color: var(--white);
-    box-shadow: var(--box-shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: var(--transition);
-}
-
-.main-nav.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    animation: slideDown 0.5s ease;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-.main-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-.nav-brand a {
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.nav-brand img {
-    height: 60px;
-    width: auto;
-    margin-right: 10px;
-}
-
-.nav-brand span {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: var(--text-color);
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
-    transition: var(--transition);
-}
-
-.nav-links a::before, .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
-}
-.nav-links a::after {
-    left: 0;
-    bottom: -2px;
-}
-.nav-links a::before {
-    right: 0;
-    top: -2px;
-}
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.nav-links a:hover::before, .nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-left: 30px;
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: var(--transition);
-    outline: none;
-}
-
-.theme-toggle:hover {
-    color: var(--primary-color);
-    transform: rotate(20deg);
-}
-
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    margin-left: 15px;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 5px 0;
-    transition: var(--transition);
-}
-
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -766,7 +577,7 @@ body.dark-mode .gallery-preview {
 
 /* Dark mode for footer */
 body.dark-mode footer {
-    background-color: #181c22;
+    background-color: var(--black);
 }
 
 /* Dark mode for text elements */
@@ -776,42 +587,42 @@ body.dark-mode .feature-card h3,
 body.dark-mode .principal-message h2,
 body.dark-mode .testimonial-author h4,
 body.dark-mode .about-content h2 {
-    color: #f0f0f0;
+    color:var(--light-color);
 }
 
 body.dark-mode .section-subtitle,
 body.dark-mode .principal-message p,
 body.dark-mode .about-content p {
-    color: #b0b0b0;
+    color: var(--light-color);
 }
 
 /* Dark mode for cards and containers */
 body.dark-mode .feature-card,
 body.dark-mode .testimonial {
     background-color: #252525;
-    color: #e0e0e0;
+    color: var(--light-color)0;
 }
 
 /* Dark mode for form elements */
 body.dark-mode .newsletter input {
     background-color: #2d2d2d;
-    color: #f0f0f0;
+    color: var(--light-color);
 }
 
 body.dark-mode .newsletter input::placeholder {
-    color: #a0a0a0;
+    color: var(--light-color);
 }
 
 /* Dark mode for navigation */
 body.dark-mode .top-nav {
     background-color: #181b20;
-    color: #e0e0e0;
+    color:var(--light-color);
 }
 
 body.dark-mode .top-nav-content,
 body.dark-mode .top-nav-links a,
 body.dark-mode .top-nav-social a {
-    color: #e0e0e0;
+    color:var(--light-color);
 }
 
 body.dark-mode .top-nav-links a:hover,
@@ -825,11 +636,11 @@ body.dark-mode .main-nav {
 }
 
 body.dark-mode .nav-brand span {
-    color: #e0e0e0;
+    color: var(--light-color);
 }
 
 body.dark-mode .nav-links a {
-    color: #e0e0e0;
+    color:var(--light-color);
 }
 
 body.dark-mode .nav-links a:hover {
@@ -837,17 +648,17 @@ body.dark-mode .nav-links a:hover {
 }
 
 body.dark-mode .theme-toggle {
-    color: #e0e0e0;
+    color: var(--light-color);
 }
 
 /* Dark mode for buttons */
 body.dark-mode .btn-outline {
-    border-color: #e0e0e0;
-    color: #e0e0e0;
+    border-color: var(--light-color);
+    color: var(--light-color);
 }
 
 body.dark-mode .btn-outline:hover {
-    background-color: #e0e0e0;
+    background-color: var(--light-color);
     color: var(--primary-color);
 }
 body.dark-mode .cta-section{
