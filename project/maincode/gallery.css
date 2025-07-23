@@ -2,7 +2,7 @@
 .gallery-hero {
     height: 50vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('images/gallery-hero.jpg') no-repeat center center/cover;
+                url('images/SchoolEvent.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     text-align: center;
@@ -13,6 +13,19 @@
 .breadcrumb {
     padding: 15px 0;
     background-color: var(--light-gray);
+}
+.breadcrumb a {
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb span {
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 .gallery-filter {
