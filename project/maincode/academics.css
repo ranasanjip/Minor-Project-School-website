@@ -367,7 +367,7 @@ tr:hover {
 
 .calendar-section {
     padding: 80px 0;
-    background-color: var(--white);
+    background-color: var(--light-gray);
 }
 
 .calendar-events {

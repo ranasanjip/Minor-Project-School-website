@@ -116,8 +116,8 @@
 }
 
 .load-more button {
-    border-color: gray;
-    color: gray;
+    border-color: var(--white);
+    color: var(--white);
     padding: 10px 25px;
 }
 
