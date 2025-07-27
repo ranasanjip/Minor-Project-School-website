@@ -1,4 +1,4 @@
-/* Contact Page Styles */
+
 .contact-hero {
     height: 50vh;
     min-height: 300px;
@@ -277,7 +277,7 @@ button[type="submit"]:hover {
     max-height: 500px;
 }
 
-/* Dark Mode Styles */
+
 body.dark-mode .contact-info-section,
 body.dark-mode .faq-section {
     background-color: var(--dark-color);
@@ -324,7 +324,7 @@ body.dark-mode .faq-question.active {
     background-color: var(--primary-dark);
 }
 
-/* Responsive Design */
+
 @media (min-width: 768px) {
     .contact-hero h1 {
         font-size: 3rem;

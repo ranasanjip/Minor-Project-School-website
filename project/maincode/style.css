@@ -1,4 +1,4 @@
-/* style.css - Fixed and Optimized */
+
 :root {
     --primary-color: #3498db;
     --primary-dark: #2980b9;
@@ -142,7 +142,7 @@ ul {
     box-shadow: var(--box-shadow);
 }
 
-/* Hero Section */
+
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
@@ -191,7 +191,6 @@ ul {
     }
 }
 
-/* Principal's Desk Section */
 .principal-desk {
     background-color: var(--white);
     color: var(--text-color);
@@ -247,7 +246,7 @@ ul {
     transition: var(--transition);
 }
 
-/* Features Section */
+
 .features-section {
     padding: 100px 0;
     background-color: var(--white);
@@ -293,7 +292,7 @@ ul {
     transition: var(--transition);
 }
 
-/* About Preview Section */
+
 .about-preview {
     padding: 100px 0;
     background-color: var(--light-gray);
@@ -344,7 +343,7 @@ ul {
     transform: scale(1.05);
 }
 
-/* Testimonials Section */
+
 .testimonials {
     padding: 100px 0;
     background-color: var(--white);
@@ -400,7 +399,7 @@ ul {
     font-size: 0.9rem;
 }
 
-/* Gallery Preview Section */
+
 .gallery-preview {
     padding: 100px 0;
     background-color: var(--light-gray);
@@ -459,7 +458,7 @@ ul {
     color: var(--primary-color);
 }
 
-/* Call to Action Section */
+
 .cta-section {
     padding: 80px 0;
     background-color: var(--primary-color);
@@ -557,7 +556,7 @@ ul {
 .footer-links a:hover {
     color: var(--primary-color);
 }
-/* Dark mode for all content sections */
+
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -572,12 +571,12 @@ body.dark-mode .gallery-preview {
     color: #e0e0e0;
 }
 
-/* Dark mode for footer */
+
 body.dark-mode footer {
     background-color: var(--black);
 }
 
-/* Dark mode for text elements */
+
 body.dark-mode .section-title,
 body.dark-mode .section-subtitle,
 body.dark-mode .feature-card h3,
@@ -593,14 +592,14 @@ body.dark-mode .about-content p {
     color: var(--light-color);
 }
 
-/* Dark mode for cards and containers */
+
 body.dark-mode .feature-card,
 body.dark-mode .testimonial {
     background-color: #252525;
     color: var(--light-color)0;
 }
 
-/* Dark mode for form elements */
+
 body.dark-mode .newsletter input {
     background-color: #2d2d2d;
     color: var(--light-color);
@@ -610,7 +609,7 @@ body.dark-mode .newsletter input::placeholder {
     color: var(--light-color);
 }
 
-/* Dark mode for navigation */
+
 body.dark-mode .top-nav {
     background-color: #181b20;
     color:var(--light-color);
@@ -648,7 +647,7 @@ body.dark-mode .theme-toggle {
     color: var(--light-color);
 }
 
-/* Dark mode for buttons */
+
 body.dark-mode .btn-outline {
     border-color: var(--light-color);
     color: var(--light-color);
@@ -662,7 +661,7 @@ body.dark-mode .cta-section{
  background-color: #2d2d2d;
 }
 
-/* Responsive Design */
+
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 3rem;

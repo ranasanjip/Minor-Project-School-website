@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
     const togglePassword = document.querySelector('.toggle-password');
     const passwordInput = document.getElementById('password');
     const loginForm = document.getElementById('loginForm');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordStrengthBar = document.querySelector('.password-strength-bar');
     const passwordStrengthText = document.querySelector('.password-strength-text');
 
-    // Toggle password visibility
     if (togglePassword && passwordInput) {
         togglePassword.addEventListener('click', function() {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -20,33 +18,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Robust email validation function
     function validateEmail(email) {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return re.test(String(email).toLowerCase());
     }
 
     function validateUsername(username) {
-        // Username should be 3-20 chars, letters, numbers, underscores or dots
+        
         const re = /^[a-zA-Z0-9_.]{3,20}$/;
         return re.test(username);
     }
 
     function validatePassword(password) {
-        // Password should be at least 8 chars with at least one letter and one number
+      
         const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
         return re.test(password);
     }
 
     function checkPasswordStrength(password) {
-        // Strength calculation
+     
         let strength = 0;
         
-        // Length check
+    
         if (password.length >= 8) strength += 1;
         if (password.length >= 12) strength += 1;
         
-        // Complexity checks
+        
         if (/[A-Z]/.test(password)) strength += 1;
         if (/\d/.test(password)) strength += 1;
         if (/[^A-Za-z0-9]/.test(password)) strength += 1;
@@ -56,8 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updatePasswordStrength(password) {
         const strength = checkPasswordStrength(password);
-        
-        // Reset classes
+      
         passwordStrength.className = 'password-strength';
         passwordStrengthBar.style.width = '0%';
         
@@ -107,23 +103,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Form submission handling
+    
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Clear previous messages
+           
             clearError(usernameError);
             clearError(passwordError);
             successMessage.style.display = 'none';
             
-            // Get form values
+         
             const username = usernameInput.value.trim();
             const password = passwordInput.value.trim();
             
             let isValid = true;
             
-            // Validate username/email
+         
             if (!username) {
                 showError(usernameError, 'Username or email is required');
                 isValid = false;
@@ -137,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
             }
             
-            // Validate password
+           
             if (!password) {
                 showError(passwordError, 'Password is required');
                 isValid = false;
@@ -147,28 +143,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (isValid) {
-                // Show loading state
+               
                 const submitBtn = loginForm.querySelector('button[type="submit"]');
                 const originalBtnText = submitBtn.innerHTML;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
                 submitBtn.disabled = true;
                 
-                // Simulate server request
+             
                 setTimeout(() => {
-                    // Reset button state
+                   
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
                     
-                    // Show success message
-                    showSuccess(`Welcome back! Redirecting to dashboard...`);
                     
-                    // In real implementation, redirect after successful login
-                    // window.location.href = '/dashboard.html';
+                    showSuccess(`Welcome back! Redirecting to dashboard...`);
+                
                 }, 1500);
             }
         });
         
-        // Real-time validation for username/email
         usernameInput.addEventListener('input', function() {
             const username = this.value.trim();
             if (!username) {
@@ -186,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Real-time validation for password
         passwordInput.addEventListener('input', function() {
             const password = this.value.trim();
             updatePasswordStrength(password);
@@ -201,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Dark mode toggle
+
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
     
     if (darkModeToggle) {

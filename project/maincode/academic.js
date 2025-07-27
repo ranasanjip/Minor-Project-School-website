@@ -1,4 +1,4 @@
-// academics.js - Script for Academics page functionality
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Grade Levels Tab Functionality

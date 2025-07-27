@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
     
-    // Mobile menu toggle
     initMobileMenu();
     
-    // Sticky header
     initStickyHeader();
     
-    // Dark mode toggle
     initDarkMode();
     
-    // Smooth scrolling for anchor links
     initSmoothScrolling();
-    
-    // Current year in footer
+   
     updateCurrentYear();
 });
 
-// Mobile Menu Functionality
+
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -30,7 +24,7 @@ function initMobileMenu() {
         });
     }
     
-    // Close mobile menu when clicking on a link
+   
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -43,7 +37,7 @@ function initMobileMenu() {
     });
 }
 
-// Sticky Header Functionality
+
 function initStickyHeader() {
     const mainNav = document.querySelector('.main-nav');
     
@@ -58,7 +52,7 @@ function initStickyHeader() {
     }
 }
 
-// Dark Mode Toggle
+
 function initDarkMode() {
     const themeToggle = document.querySelector('.theme-toggle');
     
@@ -77,7 +71,7 @@ function initDarkMode() {
             }
         });
         
-        // Check for saved theme preference
+        
         if (localStorage.getItem('darkMode') === 'true') {
             document.body.classList.add('dark-mode');
             const icon = themeToggle.querySelector('i');
@@ -89,7 +83,7 @@ function initDarkMode() {
     }
 }
 
-// Smooth Scrolling for Anchor Links
+
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -105,7 +99,7 @@ function initSmoothScrolling() {
     });
 }
 
-// Update Current Year in Footer
+
 function updateCurrentYear() {
     const yearElements = document.querySelectorAll('.current-year');
     const currentYear = new Date().getFullYear();

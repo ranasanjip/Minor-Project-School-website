@@ -1,5 +1,5 @@
 
-/* Footer Styles */
+
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
@@ -186,7 +186,7 @@ footer .container {
     color: var(--primary-color);
 }
 
-/* Dark Mode Styles */
+
 body.dark-mode footer {
     background-color: #181c22;
 }
@@ -208,7 +208,7 @@ body.dark-mode .newsletter input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load navbar into placeholder
+  
     const navbarPlaceholder = document.getElementById('navbar-placeholder');
     if (navbarPlaceholder) {
         fetch('navbar.html')
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initializeNavbar() {
-        // Mobile menu toggle
+        
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Sticky navbar on scroll
+       
         const mainNav = document.querySelector('.main-nav');
         if (mainNav) {
             window.addEventListener('scroll', function() {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Dark mode toggle
+       
         const themeToggle = document.querySelector('.theme-toggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', function() {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Check for saved theme preference
+          
             if (localStorage.getItem('darkMode') === 'true') {
                 document.body.classList.add('dark-mode');
                 const icon = themeToggle.querySelector('i');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Close mobile menu when clicking on a link
+       
         const navItems = document.querySelectorAll('.nav-links a');
         navItems.forEach(item => {
             item.addEventListener('click', function() {
