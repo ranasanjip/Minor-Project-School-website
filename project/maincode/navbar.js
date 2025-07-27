@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.classList.toggle('no-scroll');
             });
         }
-
-       
+        
         const mainNav = document.querySelector('.main-nav');
         if (mainNav) {
             window.addEventListener('scroll', function() {
@@ -35,8 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-
-       
+        
         const themeToggle = document.querySelector('.theme-toggle');
         if (themeToggle) {
             themeToggle.addEventListener('click', function() {
@@ -52,8 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     icon.classList.add('fa-moon');
                 }
             });
-
-          
+            
             if (localStorage.getItem('darkMode') === 'true') {
                 document.body.classList.add('dark-mode');
                 const icon = themeToggle.querySelector('i');
@@ -63,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-
-       
+        
         const navItems = document.querySelectorAll('.nav-links a');
         navItems.forEach(item => {
             item.addEventListener('click', function() {
