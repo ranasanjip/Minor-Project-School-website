@@ -18,7 +18,7 @@ This is a fully responsive School Website created using **HTML, CSS, and JavaScr
 
 ## 🚀 Upcoming Work
 
-I am currently working on an **Admin Dashboard & Student Management System**, which will be connected to this website and reachable via a login page. It will include:  
+I am  also Planning to work on an **Admin Dashboard & Student Management System**, which will be connected to this website and reachable via a login page. It will include:  
 
 - Admin login  
 - Student record management  
